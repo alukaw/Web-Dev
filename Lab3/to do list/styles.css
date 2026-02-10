@@ -1,0 +1,106 @@
+body{
+  margin: 0;
+  font-family: sans-serif;
+  background: white;
+}
+
+
+.gl-header{
+  background: black;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  color: rgb(136, 136, 137);
+  font-size: 18px;
+  margin: 0;
+  padding-left: 90px;
+}
+
+.container{
+  width: 900px;
+  margin: 60px auto;
+}
+
+.page-title{
+
+  font-size: 35px;
+  margin: 0 0 30px 0;
+}
+
+.add-task{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.task-input{
+  width: 520px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgb(208, 208, 208);
+  box-sizing: border-box;
+}
+
+.btn{
+  width: 70px;
+  height: 40px;
+  background-color: rgb(70, 106, 191);
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+.task-list{
+  list-style: none;          
+  padding: 0;
+  margin: 0 auto;
+  width: 700px;
+
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 6px;
+  overflow: hidden;          
+  background: white;
+}
+
+.task-item{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.task-item:last-child{
+  border-bottom: none;
+}
+
+.task-item input{
+  width: 16px;
+  accent-color: rgb(56, 56, 254);
+}
+
+.task-text{
+  flex: 1;                  
+  font-size: 14px;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+}
+
+
+.delete-btn{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: red;
+  font-size: 16px;
+}
+

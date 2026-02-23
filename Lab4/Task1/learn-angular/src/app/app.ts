@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { User } from './user/user';
 import { Comments } from './comments/comments';
 import { NgOptimizedImage } from '@angular/common';
@@ -7,7 +7,7 @@ import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Comments, NgOptimizedImage],
+  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

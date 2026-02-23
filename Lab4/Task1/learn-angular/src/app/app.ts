@@ -33,5 +33,11 @@ export class App {
   }
 
   favoriteFramework = '';
+
+  submittedFramework = '';
+
+  onSubmit(form: any) {
+    this.submittedFramework = form.value.framework;
+  }
 }
 

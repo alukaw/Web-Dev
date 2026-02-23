@@ -3,11 +3,12 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { User } from './user/user';
 import { Comments } from './comments/comments';
 import { NgOptimizedImage } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink],
+  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -30,5 +31,7 @@ export class App {
   onNotify() {
   alert('Message received from child component!');
   }
+
+  favoriteFramework = '';
 }
 

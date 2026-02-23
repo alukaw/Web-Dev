@@ -6,11 +6,12 @@ import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule, FormControl,  Validators } from '@angular/forms';
 import { CarService } from './car';
+import { LowerCasePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule],
+  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule, LowerCasePipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -28,7 +29,8 @@ export class App {
     this.message = 'Way to go ';
   }
 
-  userName = 'Angular Student';
+
+  username = 'YoungTech';
 
   onNotify() {
   alert('Message received from child component!');

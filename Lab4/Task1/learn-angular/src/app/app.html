@@ -1,16 +1,2 @@
-<h2>Reactive Form with Validation</h2>
-
-<input [formControl]="nameControl" placeholder="Enter name" />
-
-@if (nameControl.invalid && nameControl.touched) {
-  <div style="color: red;">
-    @if (nameControl.errors?.['required']) {
-      <p>Name is required</p>
-    }
-    @if (nameControl.errors?.['minlength']) {
-      <p>Name must be at least 3 characters</p>
-    }
-  </div>
-}
-
-<p>You typed: {{ nameControl.value }}</p>
+<p>Car Listing: {{ display }}</p>
+<router-outlet></router-outlet>

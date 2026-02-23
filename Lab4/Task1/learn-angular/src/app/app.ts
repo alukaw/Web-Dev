@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { User } from './user/user';
 import { Comments } from './comments/comments';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule, FormControl,  Validators } from '@angular/forms';
+import { CarService } from './car';
 
 
 @Component({
@@ -45,5 +46,8 @@ export class App {
   Validators.required,
   Validators.minLength(3)
   ]);
+
+  private carService = inject(CarService);
+  display = this.carService.getCars().join(' ⭐️ ');
 }
 

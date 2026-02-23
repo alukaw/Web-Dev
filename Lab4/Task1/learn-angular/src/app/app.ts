@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule, FormControl,  Validators } from '@angular/forms';
 import { CarService } from './car';
 import { LowerCasePipe } from '@angular/common';
+import { DatePipe, CurrencyPipe, PercentPipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule, LowerCasePipe],
+  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule, LowerCasePipe, DatePipe, CurrencyPipe, PercentPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -31,6 +32,10 @@ export class App {
 
 
   username = 'YoungTech';
+
+  today = new Date();
+  price = 12345.678;
+  discount = 0.25;
 
   onNotify() {
   alert('Message received from child component!');

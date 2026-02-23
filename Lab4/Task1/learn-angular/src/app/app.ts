@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User } from './user/user';
 import { Comments } from './comments/comments';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Comments],
+  imports: [RouterOutlet, User, Comments, NgOptimizedImage],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

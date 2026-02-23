@@ -1,4 +1,9 @@
 Hello {{ city }}
 <section>
   <app-user />
+  @if (isLoggedIn) {
+    <p>Welcome back!</p>
+  } @else {
+    <p>Please log in.</p>
+  }
 </section>

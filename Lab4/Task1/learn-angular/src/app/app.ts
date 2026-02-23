@@ -11,5 +11,6 @@ import { User } from './user/user';
 export class App {
   protected readonly title = signal('learn-angular');
   city = 'San Francisco';
+  isLoggedIn = true;
 }
 

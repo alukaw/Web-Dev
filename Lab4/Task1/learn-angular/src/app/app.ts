@@ -4,6 +4,7 @@ import { User } from './user/user';
 import { Comments } from './comments/comments';
 import { NgOptimizedImage } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, User, Comments, NgOptimizedImage],

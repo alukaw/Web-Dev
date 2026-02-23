@@ -1,59 +1,8 @@
-Hello {{ city }}
-<section (mouseover)="showSecretMessage()">
-  @defer {
-  <app-user 
-    [name]="name" 
-    (notify)="onNotify()" 
-  />
-  }
-  @placeholder {
-  <p>Loading user...</p>
-  } 
+<h1>Angular Routing Example</h1>
 
-  <router-outlet></router-outlet>
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/user">User</a>
+</nav>
 
-    <div>
-    <h1>How I feel about Angular</h1>
-
-    <article>
-      <p>Angular is my favorite framework ...</p>
-      <p>Angular is my favorite framework ...</p>
-      <p>Angular is my favorite framework ...</p>
-      <p>Angular is my favorite framework ...</p>
-      <p>Angular is my favorite framework ...</p>
-      <p>Angular is my favorite framework ...</p>
-    </article>
-
-    @defer (on viewport) {
-      <app-comments />
-    } @placeholder {
-      <p>Future comments</p>
-    } @loading (minimum 2s) {
-      <p>Loading comments...</p>
-    }
-    </div>
-
-  @if (isLoggedIn) {
-    <p>Welcome back!</p>
-  } @else {
-    <p>Please log in.</p>
-  }
-  <h3>User list:</h3>
-
-  <ul>
-    @for (user of users; track $index) {
-      <li>{{ user }}</li>
-    }
-  </ul>
-
-  <div [contentEditable]="isEditable">Edit me</div>
-
-  <p>{{ message }}</p>
-
-  <img
-  ngSrc="https://angular.io/assets/images/logos/angular/angular.png"
-  width="200"
-  height="200"
-  alt="Angular Logo"
-  />
-</section>
+<router-outlet></router-outlet>

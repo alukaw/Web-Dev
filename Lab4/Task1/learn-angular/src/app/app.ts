@@ -13,5 +13,6 @@ export class App {
   city = 'San Francisco';
   isLoggedIn = true;
   users = ['Anna', 'Bob', 'Charlie']; 
+  isEditable = true;
 }
 

@@ -6,4 +6,11 @@ Hello {{ city }}
   } @else {
     <p>Please log in.</p>
   }
+  <h3>User list:</h3>
+
+  <ul>
+    @for (user of users; track $index) {
+      <li>{{ user }}</li>
+    }
+  </ul>
 </section>

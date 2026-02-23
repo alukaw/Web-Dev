@@ -12,5 +12,6 @@ export class App {
   protected readonly title = signal('learn-angular');
   city = 'San Francisco';
   isLoggedIn = true;
+  users = ['Anna', 'Bob', 'Charlie']; 
 }
 

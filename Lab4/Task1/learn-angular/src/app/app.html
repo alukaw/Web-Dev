@@ -1,14 +1,5 @@
-<h2>Favorite Framework Form</h2>
+<h2>Reactive Form</h2>
 
-<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)">
-  <input
-    type="text"
-    name="framework"
-    ngModel
-    placeholder="Enter framework name"
-  />
+<input [formControl]="nameControl" placeholder="Enter name" />
 
-  <button type="submit">Submit</button>
-</form>
-
-<p>Submitted value: {{ submittedFramework }}</p>
+<p>You typed: {{ nameControl.value }}</p>

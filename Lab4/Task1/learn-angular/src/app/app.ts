@@ -4,11 +4,12 @@ import { User } from './user/user';
 import { Comments } from './comments/comments';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule],
+  imports: [RouterOutlet, User, Comments, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -39,5 +40,7 @@ export class App {
   onSubmit(form: any) {
     this.submittedFramework = form.value.framework;
   }
+  
+  nameControl = new FormControl('');
 }
 

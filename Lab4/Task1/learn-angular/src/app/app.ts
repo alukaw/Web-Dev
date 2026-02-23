@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User } from './user/user';
+import { Comments } from './comments/comments';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User],
+  imports: [RouterOutlet, User, Comments],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -16,6 +17,7 @@ export class App {
   isEditable = true;
 
   message = '';
+  name = 'Angular Student';
 
   showSecretMessage() {
     this.message = 'Way to go ';

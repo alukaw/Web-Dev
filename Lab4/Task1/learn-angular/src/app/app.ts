@@ -4,7 +4,7 @@ import { User } from './user/user';
 import { Comments } from './comments/comments';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormControl,  Validators } from '@angular/forms';
 
 
 @Component({
@@ -41,6 +41,9 @@ export class App {
     this.submittedFramework = form.value.framework;
   }
   
-  nameControl = new FormControl('');
+  nameControl = new FormControl('', [
+  Validators.required,
+  Validators.minLength(3)
+  ]);
 }
 

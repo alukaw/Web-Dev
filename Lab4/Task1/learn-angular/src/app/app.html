@@ -1,5 +1,5 @@
 Hello {{ city }}
-<section>
+<section (mouseover)="showSecretMessage()">
   <app-user />
   @if (isLoggedIn) {
     <p>Welcome back!</p>
@@ -15,4 +15,6 @@ Hello {{ city }}
   </ul>
 
   <div [contentEditable]="isEditable">Edit me</div>
+
+  <p>{{ message }}</p>
 </section>

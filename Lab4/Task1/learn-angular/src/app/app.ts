@@ -14,5 +14,11 @@ export class App {
   isLoggedIn = true;
   users = ['Anna', 'Bob', 'Charlie']; 
   isEditable = true;
+
+  message = '';
+
+  showSecretMessage() {
+    this.message = 'Way to go ';
+  }
 }
 

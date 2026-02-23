@@ -1,12 +1,16 @@
-import { Component, input} from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  standalone: true,
   templateUrl: './user.html',
   styleUrl: './user.css',
-  template: ` <p>The user's name is {{ name() }}</p> `,
 })
 export class User {
   readonly name = input<string>();
+  readonly notify = output<void>();
+
+  notifyParent() {
+    this.notify.emit();
+  }
 }

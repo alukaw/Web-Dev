@@ -20,7 +20,11 @@ export class App {
   showSecretMessage() {
     this.message = 'Way to go ';
   }
-  
+
   userName = 'Angular Student';
+
+  onNotify() {
+  alert('Message received from child component!');
+  }
 }
 

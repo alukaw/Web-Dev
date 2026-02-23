@@ -1,6 +1,6 @@
 Hello {{ city }}
 <section (mouseover)="showSecretMessage()">
-  <app-user [name]="userName"/>
+  <app-user [name]="userName" (notify)="onNotify()"/>
   @if (isLoggedIn) {
     <p>Welcome back!</p>
   } @else {

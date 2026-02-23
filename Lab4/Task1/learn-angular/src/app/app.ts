@@ -20,5 +20,7 @@ export class App {
   showSecretMessage() {
     this.message = 'Way to go ';
   }
+  
+  userName = 'Angular Student';
 }
 

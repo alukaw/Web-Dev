@@ -1,0 +1,42 @@
+<div class="page">
+  <header class="header">
+    <div>
+      <h1 class="h1">{{ title }}</h1>
+      <p class="sub">Choose a category to see products. Like ❤️ and delete 🗑️ are interactive.</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="h2">Categories</h2>
+
+      <div class="cats">
+        <button
+          *ngFor="let c of categories"
+          type="button"
+          class="catBtn"
+          [class.active]="isSelected(c.id)"
+          (click)="selectCategory(c.id)"
+        >
+          {{ c.name }}
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div *ngIf="selectedCategoryId === null; else productsBlock" class="welcome">
+        <h2>Select a category</h2>
+        <p>Click any category on the left to open products.</p>
+      </div>
+
+      <ng-template #productsBlock>
+        <div class="topline">
+          <h2 class="h2">{{ selectedCategoryName }}</h2>
+          <span class="hint">Links open on kaspi.kz</span>
+        </div>
+
+        <app-product-list [products]="selectedProducts"></app-product-list>
+      </ng-template>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="view.length === 0" class="empty">
+  No products in this category.
+</div>
+
+<div *ngIf="view.length > 0" class="grid">
+  <app-product-item
+    *ngFor="let p of view; trackBy: trackById"
+    [product]="p"
+    (deleteProduct)="handleDelete($event)">
+  </app-product-item>
+</div>

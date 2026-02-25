@@ -1,0 +1,17 @@
+.list {
+  width: 100%;
+}
+
+.empty {
+  padding: 18px;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}

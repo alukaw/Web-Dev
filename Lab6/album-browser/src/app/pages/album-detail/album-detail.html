@@ -1,0 +1,33 @@
+@if (loading()) {
+  <div class="detail-container">
+    <p>Loading album...</p>
+  </div>
+
+} @else if (error()) {
+  <div class="detail-container">
+    <p class="error">{{ error() }}</p>
+  </div>
+
+} @else if (album()) {
+
+  <div class="detail-container">
+
+    <h2>Album #{{ album()!.id }}</h2>
+    <p>User ID: {{ album()!.userId }}</p>
+
+    <input [(ngModel)]="album()!.title">
+
+    <div class="buttons">
+      <button (click)="save()">Save</button>
+
+      <a
+        class="button-link"
+        [routerLink]="['/albums', album()!.id, 'photos']">
+        View Photos
+      </a>
+
+      <button (click)="back()">Back</button>
+    </div>
+
+  </div>
+}

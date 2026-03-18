@@ -1,15 +1,134 @@
-@if (loading()) {
-  <p>Loading albums...</p>
-} @else {
-
-  @for (album of albums(); track album.id) {
-    <div class="album">
-      <a [routerLink]="['/albums', album.id]">
-        {{ album.id }} - {{ album.title }}
-      </a>
-
-      <button (click)="deleteAlbum(album.id)">Delete</button>
-    </div>
+<style>
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 16px;
   }
 
-}
+  .spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #eee;
+    border-top: 4px solid #4f46e5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 14px;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  .albums-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px;
+  }
+
+  .title {
+    margin: 8px 0 14px;
+    font-size: 24px;
+    color: #111827;
+  }
+
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  }
+
+  .link {
+    text-decoration: none;
+    color: inherit;
+    display: grid;
+    gap: 10px;
+  }
+
+  .badge {
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #374151;
+    background: #f9fafb;
+  }
+
+  .album-title {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.35;
+    color: #111827;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .btn-del {
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #fecaca;
+    background: #fee2e2;
+    color: #991b1b;
+    cursor: pointer;
+    transition: 0.15s ease;
+  }
+
+  .btn-del:hover {
+    background: #fecaca;
+  }
+
+  @media (max-width: 520px) {
+    .albums-wrap { padding: 12px; }
+    .title { font-size: 20px; }
+  }
+</style>
+
+<div class="albums-wrap">
+  <h1 class="title">Albums</h1>
+
+  @if (loading()) {
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Loading albums...</p>
+    </div>
+  } @else {
+
+    <div class="grid">
+      @for (album of albums(); track album.id) {
+        <div class="card">
+          <a class="link" [routerLink]="['/albums', album.id]">
+            <span class="badge">#{{ album.id }}</span>
+            <h3 class="album-title">{{ album.title }}</h3>
+          </a>
+
+          <div class="actions">
+            <button class="btn-del" type="button" (click)="deleteAlbum(album.id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+
+  }
+</div>

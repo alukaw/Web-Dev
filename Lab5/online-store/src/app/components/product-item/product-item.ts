@@ -11,16 +11,15 @@ import { Product } from '../../models/product.model';
 })
 export class ProductItemComponent {
   @Input({ required: true }) product!: Product;
-  @Output() deleteProduct = new EventEmitter<number>();
+  @Output() remove = new EventEmitter<number>();
 
   like(): void {
-    this.product.likes++;
     console.log('LIKE', this.product.name, this.product.likes);
   }
 
   onDelete(): void {
     console.log('DELETE click', this.product.id);
-    this.deleteProduct.emit(this.product.id);
+    this.remove.emit(this.product.id);
   }
 
   shareWhatsApp(): void {

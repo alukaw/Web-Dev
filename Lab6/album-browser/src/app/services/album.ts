@@ -14,7 +14,13 @@ export class AlbumService {
   constructor(private http: HttpClient) {}
 
   getAlbums(): Observable<Album[]> {
-    return this.http.get<Album[]>(`${this.baseUrl}/albums`);
+    if (!this.albumsCache.value) {
+      return this.http.get<Album[]>(`${this.baseUrl}/albums`)
+        .pipe(
+          tap(albums => this.albumsCache.next(albums)),
+          shareReplay(1)
+        );
+    }
   }
 
   getAlbum(id: number): Observable<Album> {

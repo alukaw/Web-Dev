@@ -6,6 +6,6 @@
   <app-product-item
     *ngFor="let p of view; trackBy: trackById"
     [product]="p"
-    (deleteProduct)="handleDelete($event)">
+    (remove)="handleDelete($event)">
   </app-product-item>
 </div>

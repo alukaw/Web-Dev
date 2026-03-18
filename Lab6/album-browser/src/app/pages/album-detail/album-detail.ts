@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterLink, FormsModule],
   templateUrl: './album-detail.html',
-  styleUrl: './album-detail.css'
+  styleUrls: ['./album-detail.css']
 })
 export class AlbumDetailComponent implements OnInit {
 

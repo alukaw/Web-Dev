@@ -272,6 +272,6 @@ export class ProductService {
   }
 
   getProductsByCategoryId(categoryId: number): Product[] {
-    return this.products.filter((p) => p.categoryId === categoryId).map(p => ({ ...p }));
+  return this.products.filter(p => p.categoryId === categoryId);
   }
 }

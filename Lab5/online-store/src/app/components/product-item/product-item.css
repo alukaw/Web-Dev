@@ -7,12 +7,15 @@
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+  position: relative;
 }
 
 .imageWrap {
   display: block;
   background: #f3f4f6;
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 img {
@@ -26,6 +29,8 @@ img {
   padding: 14px 14px 14px 0;
   display: grid;
   gap: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -75,6 +80,12 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.actions button{
+  pointer-events: auto;
 }
 
 .btn {

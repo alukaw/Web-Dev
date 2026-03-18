@@ -1,15 +1,90 @@
-@if (loading()) {
-  <p>Loading photos...</p>
-} @else {
+<style>
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 16px;
+  }
 
-  <div class="grid">
-    @for (photo of photos(); track photo.id) {
-      <div class="photo">
-        <img [src]="photo.thumbnailUrl" alt="photo">
-        <p>{{ photo.title }}</p>
-      </div>
-    }
-  </div>
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-  <button (click)="back()">Back</button>
-}
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #111827;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 18px;
+  }
+
+  .photo {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.2s ease;
+  }
+
+  .photo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  }
+
+  .photo img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  .photo p {
+    font-size: 13px;
+    color: #444;
+    margin: 0;
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .back-btn:hover {
+    background: #e5e7eb;
+  }
+</style>
+
+<div class="container">
+
+  <h1 class="title">Album Photos</h1>
+
+  @if (loading()) {
+    <div class="loading">
+      <p>Loading photos...</p>
+    </div>
+  } @else {
+
+    <div class="grid">
+      @for (photo of photos(); track photo.id) {
+        <div class="photo">
+          <img [src]="photo.thumbnailUrl" alt="photo">
+          <p>{{ photo.title }}</p>
+        </div>
+      }
+    </div>
+
+    <button class="back-btn" (click)="back()">Back</button>
+  }
+
+</div>

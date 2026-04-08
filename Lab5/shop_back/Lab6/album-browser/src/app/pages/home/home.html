@@ -1,0 +1,53 @@
+<style>
+  .home {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: system-ui, Arial, sans-serif;
+  }
+
+  .hero {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+
+  .hero h2 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #111827;
+  }
+
+  .hero p {
+    color: #4b5563;
+    font-size: 16px;
+    margin: 15px 0 25px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  .btn:hover {
+    background: #1d4ed8;
+  }
+</style>
+
+<div class="home">
+  <div class="hero">
+    <h2>Welcome to AlbumBrowser</h2>
+    <p>This app lets you browse albums, edit titles, and view photos.</p>
+
+    <a class="btn" routerLink="/albums">Browse Albums</a>
+  </div>
+</div>

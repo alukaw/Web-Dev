@@ -1,0 +1,107 @@
+<style>
+  .detail-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    font-family: system-ui, Arial, sans-serif;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #111827;
+  }
+
+  p {
+    color: #4b5563;
+    margin-bottom: 16px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background: #1d4ed8;
+  }
+
+  .button-link {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .button-link:hover {
+    background: #059669;
+  }
+
+  .error {
+    color: #b91c1c;
+    font-weight: 500;
+  }
+</style>
+
+
+@if (loading()) {
+  <div class="detail-container">
+    <p>Loading album...</p>
+  </div>
+
+} @else if (error()) {
+  <div class="detail-container">
+    <p class="error">{{ error() }}</p>
+  </div>
+
+} @else if (album()) {
+
+  <div class="detail-container">
+
+    <h2>Album #{{ album()!.id }}</h2>
+    <p>User ID: {{ album()!.userId }}</p>
+
+    <input [(ngModel)]="album()!.title">
+
+    <div class="buttons">
+      <button (click)="save()">Save</button>
+
+      <a
+        class="button-link"
+        [routerLink]="['/albums', album()!.id, 'photos']">
+        View Photos
+      </a>
+
+      <button (click)="back()">Back</button>
+    </div>
+
+  </div>
+}
